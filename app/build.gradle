@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.gms.google-services'
+    // id 'com.google.gms.google-services' // Temporarily disabled for debug builds
 }
 
 def taskName = getGradle().getStartParameter().getTaskRequests().toString()
@@ -65,17 +65,17 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            // storeFile file(RELEASE_STORE_FILE)
+            // storePassword RELEASE_STORE_PASSWORD
+            // keyAlias RELEASE_KEY_ALIAS
+            // keyPassword RELEASE_KEY_PASSWORD
         }
     }
 
     buildTypes {
         release {
             minifyEnabled = false
-            signingConfig = signingConfigs.release
+            // signingConfig = signingConfigs.release
             debuggable = false
         }
         debug {
@@ -83,7 +83,7 @@ android {
         }
     }
     buildFeatures {
-        compose true
+        compose = true
     }
 
 
@@ -352,7 +352,7 @@ dependencies {
 
 /** Ads **/
     def google_ads = "com.google.android.gms:play-services-ads:24.4.0"
-    libreraImplementation google_ads
+    // libreraImplementation google_ads  // Disabled for debug builds
     pdf_v2Implementation google_ads
     ebookaImplementation google_ads
     tts_readerImplementation google_ads
@@ -360,7 +360,7 @@ dependencies {
     epub_readerImplementation google_ads
 
     def messaging_ads = "com.google.android.ump:user-messaging-platform:3.2.0"
-    libreraImplementation messaging_ads
+    // libreraImplementation messaging_ads  // Disabled for debug builds
     pdf_v2Implementation messaging_ads
     ebookaImplementation messaging_ads
     tts_readerImplementation messaging_ads

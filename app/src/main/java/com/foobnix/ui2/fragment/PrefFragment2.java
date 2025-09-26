@@ -97,10 +97,11 @@ import com.foobnix.ui2.MainTabs2;
 import com.foobnix.ui2.MyContextWrapper;
 import com.foobnix.work.SearchAllBooksWorker;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.ump.ConsentForm;
-import com.google.android.ump.ConsentInformation;
-import com.google.android.ump.FormError;
-import com.google.android.ump.UserMessagingPlatform;
+// UMP imports disabled for debug builds
+// import com.google.android.ump.ConsentForm;
+// import com.google.android.ump.ConsentInformation;
+// import com.google.android.ump.FormError;
+// import com.google.android.ump.UserMessagingPlatform;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -746,6 +747,8 @@ public class PrefFragment2 extends UIFragment {
         closeMenu.setVisibility(TxtUtils.visibleIf(AppState.get().isEnableAccessibility));
 
 
+        // UMP consent code disabled for debug builds
+        /*
         ConsentInformation consentInformation = UserMessagingPlatform.getConsentInformation(getActivity());
 
         TextView adsSettigns = inflate.findViewById(R.id.adsSettigns);
@@ -766,10 +769,11 @@ public class PrefFragment2 extends UIFragment {
         });
         boolean isPrivicyOptionRequired = consentInformation.getPrivacyOptionsRequirementStatus()
                 == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED;
+        */
 
 
-        adsSettigns.setVisibility(TxtUtils.visibleIf(isPrivicyOptionRequired));
-        TxtUtils.underlineTextView(adsSettigns);
+        // adsSettigns.setVisibility(TxtUtils.visibleIf(isPrivicyOptionRequired));
+        // TxtUtils.underlineTextView(adsSettigns);
 
 
         inflate.findViewById(R.id.onKeyCode).

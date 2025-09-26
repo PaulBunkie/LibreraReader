@@ -12,15 +12,47 @@ import com.foobnix.LibreraBuildConfig;
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
+// AdMob imports disabled for debug builds
+// import com.google.android.gms.ads.AdListener;
+// import com.google.android.gms.ads.AdRequest;
+// import com.google.android.gms.ads.AdSize;
+// import com.google.android.gms.ads.AdView;
+// import com.google.android.gms.ads.LoadAdError;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
+
+// Stub classes for debug builds
+class AdView extends android.view.View {
+    public AdView(Context context) { super(context); }
+    public void destroy() {}
+    public void setAdSize(AdSize size) {}
+    public void setAdUnitId(String id) {}
+    public void loadAd(AdRequest request) {}
+    public void setAdListener(AdListener listener) {}
+    public void pause() {}
+    public void resume() {}
+}
+class AdRequest {
+    public static class Builder {
+        public Builder() {}
+        public AdRequest build() { return new AdRequest(); }
+    }
+}
+class AdSize {
+    public static final AdSize BANNER = new AdSize();
+    public static final AdSize LARGE_BANNER = new AdSize();
+    public static final AdSize FULL_BANNER = new AdSize();
+}
+class AdListener {
+    public void onAdLoaded() {}
+    public void onAdFailedToLoad(LoadAdError error) {}
+}
+class LoadAdError {
+    public int getCode() { return 0; }
+    public String getMessage() { return ""; }
+}
 
 public class ADS {
     private static final String TAG = "ADS";

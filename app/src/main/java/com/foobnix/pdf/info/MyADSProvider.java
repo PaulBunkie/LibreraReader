@@ -10,14 +10,61 @@ import com.foobnix.LibreraApp;
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.ui2.MainTabs2;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+// AdMob imports disabled for debug builds
+// import com.google.android.gms.ads.AdView;
+// import com.google.android.gms.ads.LoadAdError;
+// import com.google.android.gms.ads.MobileAds;
+// import com.google.android.gms.ads.interstitial.InterstitialAd;
+// import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+// Stub classes for debug builds
+class InterstitialAd {
+    public void show(android.app.Activity activity) {}
+    public static void load(android.content.Context context, String adUnitId, AdRequest request, InterstitialAdLoadCallback callback) {
+        // Stub implementation
+    }
+}
+class InterstitialAdLoadCallback {
+    public void onAdLoaded(InterstitialAd ad) {}
+    public void onAdFailedToLoad(LoadAdError error) {}
+}
+class MobileAds {
+    public static void setAppVolume(float volume) {
+        // Stub implementation
+    }
+}
+class AdView extends android.view.View {
+    public AdView(android.content.Context context) { super(context); }
+    public void destroy() {}
+    public void setAdSize(AdSize size) {}
+    public void setAdUnitId(String id) {}
+    public void loadAd(AdRequest request) {}
+    public void setAdListener(AdListener listener) {}
+    public void pause() {}
+    public void resume() {}
+}
+class AdRequest {
+    public static class Builder {
+        public Builder() {}
+        public AdRequest build() { return new AdRequest(); }
+    }
+}
+class AdSize {
+    public static final AdSize BANNER = new AdSize();
+    public static final AdSize LARGE_BANNER = new AdSize();
+    public static final AdSize FULL_BANNER = new AdSize();
+}
+class AdListener {
+    public void onAdLoaded() {}
+    public void onAdFailedToLoad(LoadAdError error) {}
+}
+class LoadAdError {
+    public int getCode() { return 0; }
+    public String getMessage() { return ""; }
+}
 
 public class MyADSProvider {
 

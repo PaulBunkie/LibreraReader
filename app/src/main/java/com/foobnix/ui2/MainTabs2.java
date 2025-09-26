@@ -73,12 +73,13 @@ import com.foobnix.ui2.fragment.RecentFragment2;
 import com.foobnix.ui2.fragment.SearchFragment2;
 import com.foobnix.ui2.fragment.UIFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.ump.ConsentDebugSettings;
-import com.google.android.ump.ConsentForm;
-import com.google.android.ump.ConsentInformation;
-import com.google.android.ump.ConsentRequestParameters;
-import com.google.android.ump.FormError;
-import com.google.android.ump.UserMessagingPlatform;
+// UMP imports disabled for debug builds
+// import com.google.android.ump.ConsentDebugSettings;
+// import com.google.android.ump.ConsentForm;
+// import com.google.android.ump.ConsentInformation;
+// import com.google.android.ump.ConsentRequestParameters;
+// import com.google.android.ump.FormError;
+// import com.google.android.ump.UserMessagingPlatform;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;
@@ -598,6 +599,8 @@ public class MainTabs2 extends AdsFragmentActivity {
             }, 5000);
         }
 
+        // UMP consent code disabled for debug builds
+        /*
         try {
             //ads
             LOG.d(this, "TEST-ads-device ...");
@@ -637,9 +640,12 @@ public class MainTabs2 extends AdsFragmentActivity {
         } catch (Exception e) {
             LOG.e(e);
         }
+        */
 
     }
 
+    // UMP loadForm method disabled for debug builds
+    /*
     public void loadForm(ConsentInformation consentInformation) {
         // Loads a consent form. Must be called on the main thread.
         UserMessagingPlatform.loadConsentForm(this, new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
@@ -663,6 +669,7 @@ public class MainTabs2 extends AdsFragmentActivity {
             }
         });
     }
+    */
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onShowSycn(MessageSync msg) {

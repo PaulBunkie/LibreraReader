@@ -23,10 +23,10 @@ import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.Prefs;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.tts.TTSNotification;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+// import com.google.android.gms.ads.MobileAds;
+// import com.google.android.gms.ads.RequestConfiguration;
+// import com.google.android.gms.ads.initialization.InitializationStatus;
+// import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 
 public class LibreraApp extends MultiDexApplication {
@@ -67,6 +67,8 @@ public class LibreraApp extends MultiDexApplication {
         Dips.init(this);
         Prefs.get().init(this);
 
+        // AdMob initialization disabled for debug builds
+        /*
         try {
             if (!AppsConfig.checkIsProInstalled(this)) {
                 MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -86,6 +88,7 @@ public class LibreraApp extends MultiDexApplication {
             RequestConfiguration configuration = new RequestConfiguration.Builder().setTestDeviceIds(AppsConfig.testDevices).build();
             MobileAds.setRequestConfiguration(configuration);
         }
+        */
 
 
         Log.d("Build", "Build.TestDeviceID :" + ADS.getByTestID(this));
